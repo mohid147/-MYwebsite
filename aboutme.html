@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <!-- Add Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVq3W1jP6Gd2Ec2xDmY1zj1IT91s3tQzID2s7F8SmIz/jmL6V/xj5Ubn5fQ6F6WDL5K/SUCrwOpA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Add Google Fonts for headings -->
+    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #0a0a0a;
+            color: #fff;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #000;
+            padding: 20px 0;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+        }
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+        .nav-links li {
+            margin-left: 20px;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        .nav-links a:hover {
+            color: #ff6600;
+        }
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .hero-content {
+            max-width: 600px;
+        }
+        .hero-content .social-links a {
+            color: #fff;
+            margin-right: 10px;
+            font-size: 1.2em;
+            transition: color 0.3s;
+        }
+        .hero-content .social-links a:hover {
+            color: #ff6600;
+        }
+        .hero-content h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-family: 'Lora', serif; /* Use Lora font for headings */
+        }
+        .hero-content h1 .highlight {
+            color: #ff6600;
+        }
+        .hero-content .title {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+        }
+        .hero-content p {
+            margin-bottom: 10px;
+        }
+        .about-section, .education-section, .skills-section, .projects-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .section-title {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #ff6600; /* Highlight section titles */
+        }
+        .section-content {
+            font-size: 1em;
+            margin-bottom: 20px;
+        }
+        .skills-section ul {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .skills-section h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #ff4f6a; /* Purple for Programming Languages */
+        }
+        .skills-section p {
+            color: #ccc; /* Light gray for descriptions */
+        }
+        .projects-section {
+            margin-top: 40px;
+        }
+        .projects-section .project-item {
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ccc;
+        }
+        .projects-section .project-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        .projects-section .project-item .project-title {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #a5fd00; /* Orange for project titles */
+        }
+        .projects-section .project-item .project-description {
+            color: #ffffff; /* Light gray for project descriptions */
+            margin-bottom: 10px;
+        }
+        .projects-section .project-item .delete-btn {
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            float: right;
+        }
+        .projects-section .project-item .delete-btn:hover {
+            background-color: #e65200;
+        }
+        .add-project {
+            margin-top: 20px;
+        }
+        .add-project input[type="text"] {
+            padding: 10px;
+            width: 30%;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .add-project button {
+            padding: 10px 20px;
+            background-color: #ff6600;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .add-project button:hover {
+            background-color: #e65200;
+        }
+        @media only screen and (max-width: 768px) {
+            .nav-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+            .nav-links li {
+                margin-left: 0;
+            }
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-content {
+                text-align: center;
+                max-width: 100%;
+            }
+            .about-section, .education-section, .skills-section, .projects-section {
+                padding: 0 10px;
+            }
+            .hero-content h1 {
+                font-size: 2.5em;
+            }
+            .skills-section ul {
+                padding-left: 20px;
+            }
+            .projects-section .project-item .project-title {
+                font-size: 1.2em;
+            }
+            .add-project input[type="text"] {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">MY PORTFOLIO</div>
+            <ul class="nav-links">
+                <li><a href="Index.html">Home</a></li>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="tel:916303279390">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="hero">
+        <div class="hero-content">
+            <h1>About <span class="highlight">Me</span></h1>
+            <p>I am a final year Bachelor of Computer Applications (BCA) student actively seeking internships or job opportunities to apply and enhance my skills in the field of computer science and information technology.
+                My educational journey has equipped me with a solid foundation and practical experience in various aspects of computing, from programming to data analysis.</p>
+        </div>
+    </div>
+    <section class="education-section">
+        <h2 class="section-title">Education</h2>
+        <ul class="section-content">
+            <li><b>Schooling:</b> Shadnagar English Medium High School (Shadnagar, RR District, Telangana)</li>
+            <li><b>Intermediate:</b> Vignan Junior College (Shadnagar, RR District, Telangana)</li>
+            <li><b>Degree:</b> Omega Degree College (affiliated to Osmania University, Hyderabad)</li>
+        </ul>
+    </section>
+    <section class="skills-section">
+        <h2 class="section-title">Skills</h2>
+        <div class="section-content">
+            <h3>Programming Languages:</h3>
+            <ul>
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>Java</li>
+            </ul>
+
+            <h3>Web Development:</h3>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>React</li>
+                <li>Node.js</li>
+            </ul>
+
+            <h3>Data Science:</h3>
+            <ul>
+                <li>Data analysis</li>
+                <li>Data visualization</li>
+                <li>Machine learning (Pandas, NumPy, Matplotlib)</li>
+            </ul>
+
+            <h3>Databases:</h3>
+            <ul>
+                <li>MySQL</li>
+                <li>MongoDB</li>
+            </ul>
+
+            <h3>Version Control:</h3>
+            <ul>
+                <li>Git</li>
+                <li>GitHub</li>
+            </ul>
+
+            <h3>Problem-Solving:</h3>
+            <p>Strong analytical skills</p>
+
+            <h3>Teamwork:</h3>
+            <p>Excellent communication and collaboration skills</p>
+        </div>
+    </section>
+    <section class="projects-section">
+        <h2 class="section-title">Projects</h2>
+        <div class="section-content" id="projects-list">
+            <!-- Placeholder for dynamically added projects -->
+        </div>
+        <div class="add-project">
+            <input type="text" id="project-title" placeholder="Project Title">
+            <input type="text" id="project-description" placeholder="Project Description">
+            <button onclick="addProject()">Add Project</button>
+        </div>
+    </section>
+    <script>
+        function addProject() {
+    var title = document.getElementById("project-title").value;
+    var description = document.getElementById("project-description").value;
+
+    // Function to convert URLs in text to clickable links
+    function linkify(text) {
+        var urlRegex =/(((https?:\/\/)|(www\.))[^\s]+)/g;
+        return text.replace(urlRegex, function(url) {
+            return '<a href="' + url + '" target="_blank">' + url + '</a>';
+        });
+    }
+
+    // Create elements for project item
+    var projectItem = document.createElement("div");
+    projectItem.classList.add("project-item");
+
+    var projectTitle = document.createElement("h3");
+    projectTitle.classList.add("project-title");
+    projectTitle.textContent = title;
+
+    var projectDescription = document.createElement("p");
+    projectDescription.classList.add("project-description");
+    projectDescription.innerHTML = linkify(description); // Convert URLs to links
+
+    var deleteButton = document.createElement("button");
+    deleteButton.classList.add("delete-btn");
+    deleteButton.textContent = "Delete";
+    deleteButton.onclick = function() {
+        projectItem.remove(); // Remove the project item when delete button is clicked
+    };
+
+    // Append elements to project item
+    projectItem.appendChild(projectTitle);
+    projectItem.appendChild(projectDescription);
+    projectItem.appendChild(deleteButton);
+
+    // Append project item to projects section
+    var projectsList = document.getElementById("projects-list");
+    projectsList.appendChild(projectItem);
+
+    // Clear input fields
+    document.getElementById("project-title").value = "";
+    document.getElementById("project-description").value = "";
+}
+
+    </script>
+</body>
+</html>
