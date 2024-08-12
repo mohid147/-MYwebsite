@@ -11,6 +11,9 @@
     <header class="header">
         <nav>
             <div class="logo">Developer<span class="dot">.</span></div>
+            <button class="menu-button" aria-label="Toggle menu">
+                <i class="fas fa-bars"></i>
+            </button>
             <ul class="nav-links">
                 <li><a href="#">Home</a></li>
                 <li><a href="aboutme.html">About</a></li>
@@ -68,6 +71,12 @@
             </div>
         </div>
     </section>
-    
+
+    <script>
+        document.querySelector('.menu-button').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.classList.toggle('active');
+        });
+    </script>
 </body>
 </html>
