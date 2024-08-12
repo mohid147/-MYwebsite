@@ -1,3 +1,4 @@
+/* Global styles */
 * {
     margin: 0;
     padding: 0;
@@ -34,11 +35,11 @@ body {
 }
 
 .header .logo .dot {
-    color: #ff6600; 
+    color: #ff6600; /* Orange color */
 }
 
 .header .menu-button {
-    display: none; 
+    display: none; /* Hidden by default */
     background: none;
     border: none;
     color: #fff;
@@ -49,9 +50,9 @@ body {
 
 .header .nav-links {
     display: flex;
-    justify-content: flex-end;
     align-items: center;
     list-style: none;
+    margin-left: auto; /* Align links to the right */
 }
 
 .header .nav-links li {
@@ -72,7 +73,7 @@ body {
 /* Mobile Menu Styles */
 @media (max-width: 768px) {
     .header .menu-button {
-        display: block; 
+        display: block; /* Show menu button on mobile */
     }
 
     .header .nav-links {
@@ -153,7 +154,7 @@ body {
 /* Strengths Section */
 .strengths {
     padding: 50px 20px;
-    background-color: #0a0a0a; 
+    background-color: #0a0a0a; /* Match the body background color */
 }
 
 .strengths-heading {
@@ -184,7 +185,7 @@ body {
 }
 
 .strength {
-    background-color: #222; 
+    background-color: #222; /* Dark background for the card */
     padding: 20px;
     border-radius: 10px;
     text-align: center;
@@ -194,7 +195,7 @@ body {
 
 .strength i {
     font-size: 2.5em;
-    color: #ff6600; 
+    color: #ff6600; /* Orange color */
     margin-bottom: 10px;
 }
 
@@ -205,7 +206,7 @@ body {
 /* Responsive Design */
 @media (max-width: 768px) {
     .header .nav-links {
-        top: 60px; 
+        top: 60px; /* Position the menu below the header */
         right: 0;
     }
 
