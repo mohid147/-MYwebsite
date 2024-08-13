@@ -4,327 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me</title>
+    <link rel="stylesheet" href="Astyles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/kMVq3W1jP6Gd2Ec2xDmY1zj1IT91s3tQzID2s7F8SmIz/jmL6V/xj5Ubn5fQ6F6WDL5K/SUCrwOpA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #0a0a0a;
-            color: #fff;
-            line-height: 1.6;
-        }
-        header {
-            background-color: #000;
-            padding: 20px 0;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .logo {
-            font-size: 1.5em;
-            font-weight: bold;
-        }
-        .nav-links {
-            list-style: none;
-            display: flex;
-        }
-        .nav-links li {
-            margin-left: 20px;
-        }
-        .nav-links a {
-            color: #fff;
-            text-decoration: none;
-            font-size: 1em;
-            transition: color 0.3s;
-        }
-        .nav-links a:hover {
-            color: #ff6600;
-        }
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .hero-content {
-            max-width: 100%;
-        }
-        .hero-content .social-links a {
-            color: #fff;
-            margin-right: 10px;
-            font-size: 1.2em;
-            transition: color 0.3s;
-        }
-        .hero-content .social-links a:hover {
-            color: #ff6600;
-        }
-        .hero-content h1 {
-            font-size: 3em;
-            margin-bottom: 10px;
-            font-family: 'Lora', serif;
-        }
-        .hero-content h1 .highlight {
-            color: #ff6600;
-        }
-        .hero-content .title {
-            font-size: 1.5em;
-            margin-bottom: 20px;
-        }
-        .hero-content p {
-            margin-bottom: 10px;
-        }
-        .section {
-            max-width: 1200px;
-            margin: 40px auto;
-            padding: 0 20px;
-        }
-        .section-title {
-            font-size: 2em;
-            margin-bottom: 20px;
-            color: #ff6600;
-        }
-        .section-content {
-            font-size: 1em;
-            margin-bottom: 20px;
-        }
-        .skills-section ul {
-            list-style-type: none;
-            padding-left: 0;
-        }
-        .skills-section h3 {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #ff4f6a;
-        }
-        .skills-section p {
-            color: #ccc;
-        }
-        .projects-section {
-            margin-top: 40px;
-        }
-        .projects-section .project-item {
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #ccc;
-        }
-        .projects-section .project-item:last-child {
-            margin-bottom: 0;
-            padding-bottom: 0;
-            border-bottom: none;
-        }
-        .projects-section .project-item a {
-            color: #6dacfb; 
-        }
-        .projects-section .project-item .project-title {
-            font-size: 1.5em;
-            margin-bottom: 10px;
-            color: #a5fd00;
-        }
-        .projects-section .project-item .project-description {
-            color: #ffffff;
-            margin-bottom: 10px;
-        }
-        .projects-section .project-item .delete-btn {
-            background-color: #ff6600;
-            color: #fff;
-            border: none;
-            padding: 5px 10px;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            float: right;
-        }
-        .projects-section .project-item .delete-btn:hover {
-            background-color: #e65200;
-        }
-        .add-project {
-            margin-top: 20px;
-        }
-        .add-project input[type="text"] {
-            padding: 10px;
-            width: 30%;
-            margin-right: 10px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
-        .add-project button {
-            padding: 10px 20px;
-            background-color: #ff6600;
-            color: #fff;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        .add-project button:hover {
-            background-color: #e65200;
-        }
-        .footer-content{
-            text-align: center;
-        }
-        @media only screen and (max-width: 768px) {
-            .nav-links {
-                flex-direction: column;
-                align-items: center;
-                gap: 10px;
-            }
-            .nav-links li {
-                margin-left: 0;
-            }
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-content {
-                text-align: center;
-                max-width: 100%;
-            }
-            .section {
-                padding: 0 10px;
-            }
-            .hero-content h1 {
-                font-size: 2.5em;
-            }
-            .skills-section ul {
-                padding-left: 20px;
-            }
-            .projects-section .project-item .project-title {
-                font-size: 1.2em;
-            }
-            .add-project input[type="text"] {
-                width: 100%;
-                margin-bottom: 10px;
-            }
-            .footer-content{
-                font-size: 1.0em;
-            }
-        }
-    </style>
 </head>
 <body>
     <header>
-        <nav>
+        <div class="navbar">
             <div class="logo">MY PORTFOLIO</div>
-            <ul class="nav-links">
+            <button class="menu-btn" id="menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="tel:+916303279390">Contact</a></li>
             </ul>
-        </nav>
+        </div>
     </header>
     <div class="hero" id="about">
         <div class="hero-content">
             <h1>About <span class="highlight">Me</span></h1>
-            <p>I am a final year Bachelor of Computer Applications (BCA) student actively seeking internships or job opportunities to apply and enhance my skills in the field of computer science and information technology.
-                My educational journey has equipped me with a solid foundation and practical experience in various aspects of computing, from programming to data analysis.</p>
+            <p>I am a final year Bachelor of Computer Applications (BCA) student actively seeking internships or job opportunities to apply and enhance my skills in the field of computer science and information technology. My educational journey has equipped me with a solid foundation and practical experience in various aspects of computing, from programming to data analysis.</p>
         </div>
     </div>
-    <section class="section education-section" id="education">
-        <h2 class="section-title">Education</h2>
-        <ul class="section-content">
-            <li><strong>Shadnagar English Medium High School</strong> - High School (2020)</li>
-            <li><strong>Vignan Junior College</strong> - Intermediate (2020-2022)</li>
-            <li><strong>Omega Degree College, affiliated with Osmania University, Hyderabad </strong> - BCA </li>
-        </ul>
-    </section>
-    <section class="section skills-section" id="skills">
-        <h2 class="section-title">Skills</h2>
-        <div class="section-content">
-            <h3>Programming Languages:</h3>
-            <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>JavaScript</li>
-                <li>Python</li>
+    <div class="container">
+        <section class="section education-section" id="education">
+            <h2 class="section-title">Education</h2>
+            <ul class="section-content">
+                <li><strong>Shadnagar English Medium High School</strong> - High School (2020)</li>
+                <li><strong>Vignan Junior College</strong> - Intermediate (2020-2022)</li>
+                <li><strong>Omega Degree College, affiliated with Osmania University, Hyderabad</strong> - BCA</li>
             </ul>
-
-            <h3>Web Technologies:</h3>
-            <ul>
-                <li>React.js</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-            </ul>
-
-            <h3>Databases:</h3>
-            <ul>
-                <li>MySQL</li>
-                <li>MongoDB</li>
-            </ul>
-
-            <h3>Other Skills:</h3>
-            <ul>
-                <li>Agile Methodologies</li>
-                <li>Data Analytics</li>
-            </ul>
-        </div>
-    </section>
-    <section class="section projects-section" id="projects">
-        <h2 class="section-title">Projects</h2>
-        <div class="section-content">
-            <div class="project-item" id="ncal-project">
-                <h3 class="project-title">Ncal Project</h3>
-                <p class="project-description">The Ncal project is a web application designed to scan QR codes on food products to provide comprehensive nutritional information and help users make informed dietary decisions.</p>
-                <p>Technologies used: HTML5, CSS3, JavaScript, Firebase (backend technology)</p>
-                <a href="https://mohid147.github.io/Ncal/" target="_blank">View Project</a>
-            </div>
-            <div class="project-item" id="resume-project">
-                <h3 class="project-title">Resume Website</h3>
-                <p class="project-description">The Resume Website project serves as a personal portfolio showcasing my skills, experiences, and projects to potential employers or collaborators.</p>
-                <h3>Key Features:</h3>
-                <ul>
-                    <li>Sections for About Me, Skills, Education, and Projects.</li>
-                    <li>Interactive elements such as project lists with add and delete functionalities.</li>
-                    <li>Responsive design for optimal viewing on various devices.</li>
-                    <li>Integration with GitHub Pages for hosting.</li>
-                </ul>
-                <h3>Technologies Used:</h3>
+        </section>
+        <section class="section skills-section" id="skills">
+            <h2 class="section-title">Skills</h2>
+            <div class="section-content">
+                <h3>Programming Languages:</h3>
                 <ul>
                     <li>HTML5</li>
                     <li>CSS3</li>
                     <li>JavaScript</li>
-                    <li>GitHub Pages for deployment</li>
+                    <li>Python</li>
                 </ul>
-            </div>
-            <div class="project-item" id="doctors-project">
-                <h3 class="project-title">Doctor's Website</h3>
-                <p class="project-description">The Doctors project is a web application designed to connect patients with healthcare professionals. It allows users to search for doctors based on specialty, location, and availability.</p>
-                <h3>Key Features:</h3>
+
+                <h3>Web Technologies:</h3>
                 <ul>
-                    <li>Search functionality to find doctors by specialty and location.</li>
-                    <li>User authentication for patients to book appointments.</li>
-                    <li>Appointment scheduling with real-time availability updates.</li>
-                    <li>Profiles for doctors with detailed information and reviews.</li>
-                </ul>
-                <h3>Technologies Used:</h3>
-                <ul>
-                    <li>HTML5</li>
-                    <li>CSS3</li>
-                    <li>JavaScript</li>
+                    <li>React.js</li>
                     <li>Node.js</li>
                     <li>Express.js</li>
+                </ul>
+
+                <h3>Databases:</h3>
+                <ul>
+                    <li>MySQL</li>
                     <li>MongoDB</li>
                 </ul>
+
+                <h3>Other Skills:</h3>
+                <ul>
+                    <li>Agile Methodologies</li>
+                    <li>Data Analytics</li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
+        <section class="section projects-section" id="projects">
+            <h2 class="section-title">Projects</h2>
+            <div class="section-content">
+                <div class="project-item">
+                    <div class="project-title">VIDHIJHAN - Legal Information Platform</div>
+                    <p>02/2024 - 04/2024</p>
+                    <a href="https://mohid147.github.io/VIDHIJHAN" target="_blank" rel="noopener noreferrer">View Project</a>
+                    <p>Developed a platform to connect clients with lawyers, providing accessible legal services.</p>
+                    <ul>
+                        <li>Implemented a user-friendly interface for clients to search and connect with lawyers based on their needs.</li>
+                        <li>Integrated a secure booking system for consultations and legal services.</li>
+                    </ul>
+                </div>
+                <div class="project-item">
+                    <div class="project-title">Ncal - Nutritional Information App</div>
+                    <p>06/2024 - Present</p>
+                    <a href="https://mohid147.github.io/Ncal" target="_blank" rel="noopener noreferrer">View Project</a>
+                    <p>Designed a web application for scanning QR codes on food products to provide comprehensive nutritional information.</p>
+                    <ul>
+                        <li>Integrated QR code scanning functionality to retrieve nutritional data.</li>
+                        <li>Developed a user-friendly interface to display nutritional information and dietary recommendations.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </div>
     <footer>
         <div class="footer-content">
-            <p>&copy; 2024 My Portfolio. All rights reserved.</p>
+            <p>&copy; 2024 Mohid Mohammad. All rights reserved.</p>
         </div>
     </footer>
+    <script>
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('nav-links').classList.toggle('show');
+        });
+    </script>
 </body>
 </html>
